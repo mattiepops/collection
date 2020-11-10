@@ -28,11 +28,12 @@ body {
 }
 
 .card-img-top {
-    background-repeat: no-repeat;
+   
     background-position: 50% 50%;
     background-size: cover;
-    width: auto;
+    /*width: auto;*/
     height: 170px;
+    max-width: 100%;
 }
 
 a {
@@ -51,21 +52,22 @@ a {
     margin-top: 15px;
 }
 
+
 @media only screen and (max-width: 813px) {
 
     .container{
         display: flex;
         flex-direction: column;
     }
-    .matei-photo {
-        display: none;
-    }
+  
 
     .jumbotron {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
-
+.row {
+    justify-content: center;
+}
 
 }
