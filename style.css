@@ -11,3 +11,16 @@
 .title-container {
     display: flex;
 }
+
+
+.card {
+    margin: 10px;
+}
+
+.card-img-top {
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    width: auto;
+    height: 170px;
+}
