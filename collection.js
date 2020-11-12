@@ -104,6 +104,18 @@ for (let element of collection){
     const divGenre = document.createElement('div');
     divGenre.className = 'genre';
 
+    const aBadge = document.createElement('a');
+    aBadge.className = 'badge'
+    aBadge.textContent = element.category[0];
+
+    const bBadge = document.createElement('a');
+    bBadge.className = 'badge'
+    bBadge.textContent = element.category[1];
+
+    const cBadge = document.createElement('a');
+    cBadge.className = 'badge'
+    cBadge.textContent = element.category[2];
+
     const divCardBody = document.createElement('div');
     divCardBody.className = 'card-body';
 
@@ -123,6 +135,7 @@ for (let element of collection){
     link.className = 'fab fa-youtube';
     link.href = element.link;
     link.style.color = 'green';
+    link.target = 'blank';
 
     link.onmouseover = function () {
         link.style.textDecoration = 'none';
@@ -135,6 +148,11 @@ for (let element of collection){
 
 
     newCard.appendChild(cardImage);
+    newCard.appendChild(divGenre);
+    divGenre.appendChild(aBadge);
+    divGenre.appendChild(bBadge);
+    divGenre.appendChild(cBadge);
+
     newCard.appendChild(divGenre);
     newCard.appendChild(divCardBody);
     divCardBody.appendChild(title);
