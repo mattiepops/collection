@@ -90,9 +90,14 @@ document.querySelector(".container.card-container").innerHTML = "";
 
 const mainContainer = document.querySelector(".container.card-container");
 
-
+const newRow = document.createElement('div');
+    newRow.className = 'row';
+   
 for (let element of collection){
     
+    const newCol = document.createElement('div');
+    newCol.className = 'col-md-6 col-xs col-lg-3 d-flex';
+
     const newCard = document.createElement('div');
     newCard.className = 'card text-center flex-fill';
     newCard.style.width = '18rem'
@@ -146,7 +151,7 @@ for (let element of collection){
         link.style.color = 'green'
     }
 
-
+    
     newCard.appendChild(cardImage);
     newCard.appendChild(divGenre);
     divGenre.appendChild(aBadge);
@@ -162,6 +167,10 @@ for (let element of collection){
 
     
 
-    mainContainer.appendChild(newCard);
+    newCol.appendChild(newCard);
+
+    newRow.appendChild(newCol);
+
+    mainContainer.appendChild(newRow);
 }
 
