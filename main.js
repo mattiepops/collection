@@ -1,3 +1,33 @@
+// Beginning of filter list
+
+// const dramaFilm = [];
+//   for(let element of collection){
+//     if(element.title.startsWith('I')){
+//       dramaFilm.push(element)
+//     }
+//   }
+
+
+document.getElementsByClassName(".search_input").addEventListener("search", myFunction());
+
+
+function myFunction(pattern) {
+
+    const results = [];
+//   newSearch = document.getElementsByClassName(".search_input");
+//   document.querySelector(collection)for(let element of collection){
+  	if(element.title.match(pattern) || element.description.match(pattern))
+      results.push(element)
+}
+
+const resultsDiv = document.querySelector('.eDiv');
+resultsDiv.innerHTML = ''
+
+// end of filter list
+
+// beginning of the code for making the new 'card' elements 
+
+
 document.querySelector(".container.card-container").innerHTML = "";
 
 const mainContainer = document.querySelector(".container.card-container");
@@ -84,4 +114,8 @@ for (let element of collection){
     newRow.appendChild(newCol);
 
     mainContainer.appendChild(newRow);
+
+    resultsDiv.appendChild(mainContainer);
 }
+
+// end of the code for making the new 'card' elements 
