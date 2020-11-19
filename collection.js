@@ -15,6 +15,7 @@ const collection = [
         link: 'https://www.youtube.com/watch?v=vXf3gVYXlHg',
         description:  "In 2092 the last mortal human on Earth reflects on his long past and thinks about the possible lives he might have led, based on once choice he did or did not make as a child.",
         image: '/photos/mr-nobody-review-jared-leto.jpg'
+
       },
 
       {
@@ -83,4 +84,3 @@ const collection = [
         image: '/photos/into the wild.jpg'
       }
   ];
-
