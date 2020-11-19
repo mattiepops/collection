@@ -67,14 +67,22 @@ for (let element of collection){
     const aBadge = document.createElement('a');
     aBadge.className = 'badge'
     aBadge.textContent = element.category[0];
+    aBadge.style.backgroundColor = "green";
+    aBadge.style.color = 'white';
+
 
     const bBadge = document.createElement('a');
     bBadge.className = 'badge'
     bBadge.textContent = element.category[1];
+    bBadge.style.backgroundColor = "blue";
+    bBadge.style.color = 'white';
+
 
     const cBadge = document.createElement('a');
     cBadge.className = 'badge'
     cBadge.textContent = element.category[2];
+    cBadge.style.backgroundColor = 'red';
+    cBadge.style.color = 'white';
 
     const divCardBody = document.createElement('div');
     divCardBody.className = 'card-body';
