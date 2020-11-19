@@ -8,20 +8,36 @@
 //   }
 
 
-document.getElementsByClassName(".search_input").addEventListener("search", myFunction());
+// document.getElementsByClassName(".search_input").addEventListener("click", myFunction);
+// function myFunction(pattern) {
+//     const results = [];
+//   	if(element.title.match(pattern) || element.description.match(pattern))
+//       results.push(element)
+// }
 
 
-function myFunction(pattern) {
 
-    const results = [];
-//   newSearch = document.getElementsByClassName(".search_input");
-//   document.querySelector(collection)for(let element of collection){
-  	if(element.title.match(pattern) || element.description.match(pattern))
-      results.push(element)
-}
+// function myFunction() {
+//     // Declare variables
+//     var input, filter, searchCont, searchCard, searchTitle, i, txtValue;
+//     input = document.getElementsByClassName('.search_input');
+//     filter = input.value.toUpperCase();
+//     searchCont = document.querySelector("body > div.container.card-container");
+//     searchCard = searchCont.querySelector(".card.text-center.flex-fill")  
+//     // Loop through all list items, and hide those who don't match the search query
+//     for (i = 0; i < searchCard.length; i++) {
+//       searchTitle = searchCard[i].querySelector(".card-title")[0];
+//       txtValue = searchTitle.textContent || searchTitle.innerText;
+//       if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//         searchCard[i].style.display = "";
+//       } else {
+//         searchCard[i].style.display = "none";
+//       }
+//     }
+//   }
 
-const resultsDiv = document.querySelector('.eDiv');
-resultsDiv.innerHTML = ''
+// const resultsDiv = document.querySelector('.eDiv');
+// resultsDiv.innerHTML = ''
 
 // end of filter list
 
