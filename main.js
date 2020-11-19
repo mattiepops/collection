@@ -36,9 +36,6 @@
 //     }
 //   }
 
-// const resultsDiv = document.querySelector('.eDiv');
-// resultsDiv.innerHTML = ''
-
 // end of filter list
 
 // beginning of the code for making the new 'card' elements 
@@ -131,7 +128,8 @@ for (let element of collection){
 
     mainContainer.appendChild(newRow);
 
-    resultsDiv.appendChild(mainContainer);
+    document.body.appendChild(mainContainer);
+
 }
 
 // end of the code for making the new 'card' elements 
