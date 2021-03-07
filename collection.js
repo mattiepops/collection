@@ -84,3 +84,41 @@ const collection = [
         image: './photos/into the wild.jpg'
       }
   ];
+
+
+//   // Exercise 3 
+
+// const searchInput = document.querySelector('.search_input')
+
+// for (let element of collection){
+//   const cut = element.title.split(' ');
+
+
+
+// const displaySearch = document.createElement('div')
+
+
+// console.log(cut);
+
+// searchInput.addEventListener("keydown", function (e) {
+//     const emptyArr = [];
+
+//     const inputValue = e.target.value;
+//     const patternColl = new RegExp(inputValue, "gi")
+
+//     for (let element of cut) {
+//         if (element.match(patternColl)) {
+//             // console.log('I found: "' + e.target.value + '" in ' + egypt);
+//             emptyArr.push(element)
+//         }
+//     }
+// console.log(emptyArr.join(" "));
+
+// displaySearch.innerHTML = emptyArr.join(" ")
+
+// })
+
+// document.body.appendChild(searchInput)
+// document.body.appendChild(displaySearch)
+
+// }

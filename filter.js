@@ -1,14 +1,30 @@
-// beginning of the code for making the new 'card' elements 
+const filterFilms = (pattern) =>{
+    let results = [];
+    const searchContainer = document.querySelector(".container.card-container");
 
+    for (let film of collection){
+        if (film.title.match(pattern) || (film.author.match(pattern) || (film.description.match(pattern)))){
+            searchContainer.innerHTML = '';
+            results.push(film);
+        }
+        else if (pattern == 'all'){
+            results.push(film);
+        }
+        else {
+            for (let elem of film.category){
+                if (elem.match(pattern)){
+                    searchContainer.innerHTML= '';
+                    results.push(film);
+                }
+            }
+        }
+    }
 
-const mainContainer = document.querySelector(".container.card-container");
+    const newRow = document.createElement('div');
+    newRow.className = 'row';
+    for (let result of results){
 
-const newRow = document.createElement('div');
-newRow.className = 'row';
-
-for (let element of collection) {
-
-    const newCol = document.createElement('div');
+        const newCol = document.createElement('div');
     newCol.className = 'col-md-6 col-xs col-lg-3 d-flex';
 
     const newCard = document.createElement('div');
@@ -17,28 +33,28 @@ for (let element of collection) {
 
     const cardImage = document.createElement('img');
     cardImage.className = 'card-img-top';
-    cardImage.src = element.image
+    cardImage.src = result.image
 
     const divGenre = document.createElement('div');
     divGenre.className = 'genre';
 
     const aBadge = document.createElement('a');
     aBadge.className = 'badge'
-    aBadge.textContent = element.category[0];
+    aBadge.textContent = result.category[0];
     aBadge.style.backgroundColor = "green";
     aBadge.style.color = 'white';
 
 
     const bBadge = document.createElement('a');
     bBadge.className = 'badge'
-    bBadge.textContent = element.category[1];
+    bBadge.textContent = result.category[1];
     bBadge.style.backgroundColor = "blue";
     bBadge.style.color = 'white';
 
 
     const cBadge = document.createElement('a');
     cBadge.className = 'badge'
-    cBadge.textContent = element.category[2];
+    cBadge.textContent = result.category[2];
     cBadge.style.backgroundColor = 'red';
     cBadge.style.color = 'white';
 
@@ -47,19 +63,19 @@ for (let element of collection) {
 
     const title = document.createElement('h5');
     title.className = 'card-title';
-    title.textContent = element.title
+    title.textContent = result.title
 
     const titleSec = document.createElement('h6');
     titleSec.className = 'card-title-secondary';
-    titleSec.textContent = element.author;
+    titleSec.textContent = result.author;
 
     const paragraph = document.createElement('p');
     paragraph.className = 'card-text';
-    paragraph.textContent = element.description;
+    paragraph.textContent = result.description;
 
     const link = document.createElement('a');
     link.className = 'fab fa-youtube';
-    link.href = element.link;
+    link.href = result.link;
     link.style.color = 'green';
     link.target = 'blank';
 
@@ -86,16 +102,22 @@ for (let element of collection) {
     divCardBody.appendChild(paragraph);
     divCardBody.appendChild(link);
 
-
-
     newCol.appendChild(newCard);
 
     newRow.appendChild(newCol);
 
-    mainContainer.appendChild(newRow);
+    searchContainer.appendChild(newRow);
 
-    document.body.appendChild(mainContainer);
-
+    }
 }
 
-// end of the code for making the new 'card' elements 
+window.addEventListener('load', () => {
+    const pattern = "all"
+    filterFilms(pattern)
+})
+
+document.querySelector('#search-input').addEventListener('keyup', input => {
+    const inputValue = input.target.value;
+    const pattern = new RegExp(inputValue, "gim");
+    filterFilms(pattern);
+})
